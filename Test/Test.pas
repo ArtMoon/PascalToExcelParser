@@ -1,14 +1,33 @@
 unit Test;
 
 type //начало описания класса
-TParallel = class 
+
+TParallel2  = class;
+
+TParallel = class(BaseClass,IEnumerable)
   public 
-  Fa: word; 
-  Fb: word;
-  Fc: word;
-  procedure Init(a, b, c : word);
-  function Volume: word;
-  procedure Show;
+    Fa: word; 
+    Fb: word;
+  private
+    Fc: word;
+  protected
+    procedure Init(a, b, c : word);
+    function Volume: word;
+  private
+    procedure Show;
+end;
+type
+
+TParallel2 = class(BaseClass)
+  public 
+    Var1: TDateTime; 
+    Var2: Integer;
+  private
+    Var3: word;
+  protected
+    function foo(g: Integer): word;
+  private
+    function Init(a, b, c : word): word;
 end;
 
 var Form1: TForm1, Par1: TParallel;
